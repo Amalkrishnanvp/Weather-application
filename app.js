@@ -1,15 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
   const searchBtn = document.querySelector(".search-btn");
   const search = document.querySelector(".search");
+  const celsius = document.querySelector(".celsius");
 
-  // API key
-  const apiKey = "a1777393767d0b6a7e9652fbdf69be21";
-  // city for getting weather data
-  const city = "New York";
-  // url where the request goes
-  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
-  async function getWeatherData() {
+  async function getWeatherData(city) {
+    // API key
+    const apiKey = "a1777393767d0b6a7e9652fbdf69be21";
+    // url where the request goes
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     try {
       // fetching weather data
       const response = await fetch(apiUrl);
@@ -26,15 +24,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  getWeatherData();
-
-  // displayWeatherData(data) {
-  // }
+  function displayWeatherData(data) {
+    celsius.innerText = `${data.main.temp}°C`;
+  }
 
   searchBtn.addEventListener("click", () => {
     if (search.value != "") {
-      let value = search.value;
-      console.log(value);
+      let cityName = search.value;
+      console.log(cityName);
+      getWeatherData(cityName);
+    } else {
+      alert("Enter a city name!");
     }
   });
 });
