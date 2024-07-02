@@ -10,7 +10,7 @@ body {
   width: 100vw;
   display: flex;
   justify-content: center;
-  padding-top: 50px;
+  padding-top: 35px;
 }
 .weather {
   height: 450px;
@@ -40,24 +40,25 @@ input::placeholder {
   background: rgb(209, 209, 209);
 }
 .celsius {
-  font-size: 5rem;
+  font-size: 4.8rem;
   color: white;
   font-weight: bold;
   margin-bottom: 0;
 }
 .city-name {
   margin-bottom: 0;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
 }
 .search-bar {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
+  text-align: center;
 }
 .fa-magnifying-glass {
   font-size: 1.1rem;
 }
 .show-weather {
   text-align: center;
-  margin: 45px 0px;
+  margin: 20px 0px 25px;
 }
 .city-date {
   text-align: center;
@@ -90,4 +91,12 @@ input::placeholder {
 }
 .min-max-bold {
   font-size: 0.9rem;
+}
+.weather-conditions {
+  color: white;
+  margin-bottom: 35px;
+  text-align: center;
+}
+.weather-conditions p {
+  margin-bottom: 0.7rem;
 }
