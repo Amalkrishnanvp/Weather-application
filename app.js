@@ -5,9 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const minCelsius = document.querySelector(".min-bold");
   const maxCelsius = document.querySelector(".max-bold");
   const cityName = document.querySelector(".city-name");
-  const humidity = document.querySelector(".humidity");
-  const pressure = document.querySelector(".pressure");
-  const seaLevel = document.querySelector(".sea-level");
+  const humidity = document.querySelector(".humidity-bold");
+  const pressure = document.querySelector(".pressure-bold");
+  const seaLevel = document.querySelector(".sea-level-bold");
 
   async function getWeatherData(city) {
     // API key
@@ -35,9 +35,9 @@ document.addEventListener("DOMContentLoaded", () => {
     minCelsius.innerText = `${data.main.temp_min}°C`;
     maxCelsius.innerText = `${data.main.temp_max}°C`;
     cityName.innerText = `${data.name}`;
-    humidity.append(`${data.main.humidity}% RH`);
-    pressure.append(`${data.main.pressure} hPa`);
-    seaLevel.append(`${data.main.sea_level} hPa`);
+    humidity.innerText = (`${data.main.humidity}% RH`);
+    pressure.innerText = (`${data.main.pressure} hPa`);
+    seaLevel.innerText = (`${data.main.sea_level} hPa`);
   }
 
   searchBtn.addEventListener("click", () => {
